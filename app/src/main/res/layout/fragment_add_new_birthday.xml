@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.BirthdayInstanceFragment"
+    tools:ignore="Autofill, ContentDescription">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:isScrollContainer="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/edit_add_fragment_forename"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="8dp"
+                android:hint="@string/event_property_forename"
+                android:inputType="textPersonName|textCapSentences"
+                android:maxLength="20"
+                android:textColor="@color/dark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv_birthday_names"
+                app:layout_constraintTop_toBottomOf="@+id/frame_layout_add_avatar_image" />
+
+            <EditText
+                android:id="@+id/edit_add_fragment_nickname"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="@string/event_property_nickname"
+                android:inputType="textPersonName|textCapSentences"
+                android:maxLength="15"
+                android:textColor="@color/dark"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="@+id/edit_add_fragment_surname"
+                app:layout_constraintStart_toStartOf="@+id/edit_add_fragment_surname"
+                app:layout_constraintTop_toBottomOf="@+id/edit_add_fragment_surname" />
+
+            <EditText
+                android:id="@+id/edit_add_fragment_surname"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="@string/event_property_surname"
+                android:inputType="textPersonName|textCapSentences"
+                android:maxLength="20"
+                android:textColor="@color/dark"
+                app:layout_constraintEnd_toEndOf="@+id/edit_add_fragment_forename"
+                app:layout_constraintStart_toStartOf="@+id/edit_add_fragment_forename"
+                app:layout_constraintTop_toBottomOf="@+id/edit_add_fragment_forename" />
+
+            <TextView
+                android:id="@+id/edit_add_fragment_date_calendarview"
+                style="@android:style/Widget.Holo.Light.Spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/larger_text_size"
+                android:visibility="visible"
+                android:backgroundTint="@color/dark"
+                app:layout_constraintEnd_toStartOf="@+id/sw_is_year_given"
+                app:layout_constraintStart_toEndOf="@+id/iv_birthday_date"
+                app:layout_constraintTop_toBottomOf="@+id/edit_add_fragment_nickname" />
+
+            <EditText
+                android:id="@+id/edit_add_fragment_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:inputType="date"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/larger_text_size"
+                android:visibility="invisible"
+                android:backgroundTint="@color/dark"
+                app:layout_constraintEnd_toStartOf="@+id/sw_is_year_given"
+                app:layout_constraintStart_toEndOf="@+id/iv_birthday_date"
+                app:layout_constraintTop_toBottomOf="@+id/edit_add_fragment_nickname" />
+
+            <Switch
+                android:id="@+id/sw_is_year_given"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:showText="false"
+                android:splitTrack="false"
+                android:text="@string/event_property_year"
+                android:textColor="@color/textDark"
+                app:layout_constraintBottom_toBottomOf="@+id/edit_add_fragment_date"
+                app:layout_constraintEnd_toEndOf="@+id/edit_add_fragment_nickname"
+                app:layout_constraintTop_toTopOf="@+id/edit_add_fragment_date" />
+
+            <Button
+                android:id="@+id/btn_birthday_add_fragment_delete"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="24dp"
+                android:text="@string/btn_birthday_delete"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_add_fragment_note" />
+
+            <EditText
+                android:id="@+id/edit_add_fragment_note"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="@string/event_property_note"
+                android:inputType="textMultiLine|textCapSentences"
+                android:textColor="@color/dark"
+                app:layout_constraintEnd_toEndOf="@+id/sw_is_year_given"
+                app:layout_constraintStart_toEndOf="@+id/iv_birthday_note"
+                app:layout_constraintTop_toBottomOf="@+id/edit_add_fragment_date_calendarview"/>
+
+            <FrameLayout
+                android:id="@+id/frame_layout_add_avatar_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/iv_add_avatar_btn"
+                    android:layout_width="128dp"
+                    android:layout_height="128dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/ic_birthday_person" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="bottom|end"
+                    android:clickable="false"
+                    android:src="@drawable/ic_add_a_photo"
+                    app:elevation="0dp"
+                    app:fabCustomSize="40dp" />
+            </FrameLayout>
+
+            <ImageView
+                android:id="@+id/iv_birthday_names"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="8dp"
+                android:tint="@color/darkGrey"
+                app:layout_constraintBottom_toBottomOf="@+id/edit_add_fragment_forename"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/edit_add_fragment_forename"
+                app:srcCompat="@drawable/ic_account_box" />
+
+            <ImageView
+                android:id="@+id/iv_birthday_date"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/edit_add_fragment_date"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/edit_add_fragment_date"
+                app:srcCompat="@drawable/ic_cake" />
+
+            <ImageView
+                android:id="@+id/iv_birthday_note"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/edit_add_fragment_note"
+                app:srcCompat="@drawable/ic_notes" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
